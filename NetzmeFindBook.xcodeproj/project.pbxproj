@@ -12,7 +12,11 @@
 		086957EF2341E005002EE323 /* NetzmeFindBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 086957ED2341E005002EE323 /* NetzmeFindBook.xcdatamodeld */; };
 		086957F12341E006002EE323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086957F02341E006002EE323 /* Assets.xcassets */; };
 		086957F42341E006002EE323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086957F22341E006002EE323 /* LaunchScreen.storyboard */; };
-		08C63C552341E84000A3600A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C63C542341E84000A3600A /* HomeViewController.swift */; };
+		08C63C572341ED4800A3600A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C63C562341ED4800A3600A /* HomeViewController.swift */; };
+		08C63C59234209E200A3600A /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C63C58234209E200A3600A /* APIRouter.swift */; };
+		08C63C5B23420D5F00A3600A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C63C5A23420D5F00A3600A /* Constant.swift */; };
+		08C63C5D2342129A00A3600A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C63C5C2342129A00A3600A /* NetworkManager.swift */; };
+		08C63C5F2342138E00A3600A /* BukuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C63C5E2342138E00A3600A /* BukuModel.swift */; };
 		E412DF0E041241305BA1BA79 /* Pods_NetzmeFindBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F221CDEEE6C0E08685EA2E97 /* Pods_NetzmeFindBook.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +28,11 @@
 		086957F02341E006002EE323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		086957F32341E006002EE323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		086957F52341E006002EE323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		08C63C542341E84000A3600A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		08C63C562341ED4800A3600A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		08C63C58234209E200A3600A /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		08C63C5A23420D5F00A3600A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		08C63C5C2342129A00A3600A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		08C63C5E2342138E00A3600A /* BukuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BukuModel.swift; sourceTree = "<group>"; };
 		9FDA41279FAC96F1C4FD512E /* Pods-NetzmeFindBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetzmeFindBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NetzmeFindBook/Pods-NetzmeFindBook.debug.xcconfig"; sourceTree = "<group>"; };
 		AAD92F555E2B992C56EB37C5 /* Pods-NetzmeFindBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetzmeFindBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-NetzmeFindBook/Pods-NetzmeFindBook.release.xcconfig"; sourceTree = "<group>"; };
 		F221CDEEE6C0E08685EA2E97 /* Pods_NetzmeFindBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetzmeFindBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +95,9 @@
 		08C63C4D2341E76A00A3600A /* API Manager */ = {
 			isa = PBXGroup;
 			children = (
+				08C63C58234209E200A3600A /* APIRouter.swift */,
+				08C63C5A23420D5F00A3600A /* Constant.swift */,
+				08C63C5C2342129A00A3600A /* NetworkManager.swift */,
 			);
 			path = "API Manager";
 			sourceTree = "<group>";
@@ -94,7 +105,7 @@
 		08C63C4E2341E77300A3600A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				08C63C542341E84000A3600A /* HomeViewController.swift */,
+				08C63C562341ED4800A3600A /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -102,6 +113,7 @@
 		08C63C502341E78800A3600A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				08C63C5E2342138E00A3600A /* BukuModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,9 +275,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08C63C5D2342129A00A3600A /* NetworkManager.swift in Sources */,
+				08C63C5F2342138E00A3600A /* BukuModel.swift in Sources */,
 				086957E72341E005002EE323 /* AppDelegate.swift in Sources */,
+				08C63C59234209E200A3600A /* APIRouter.swift in Sources */,
+				08C63C5B23420D5F00A3600A /* Constant.swift in Sources */,
 				086957EF2341E005002EE323 /* NetzmeFindBook.xcdatamodeld in Sources */,
-				08C63C552341E84000A3600A /* HomeViewController.swift in Sources */,
+				08C63C572341ED4800A3600A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
