@@ -9,5 +9,5 @@
 import Foundation
 
 protocol bookProtocol {
-    func setBookInfo(volumeInfo: [Any])
+    func setBookInfo(bukuInfo: [BukuInfo])
 }

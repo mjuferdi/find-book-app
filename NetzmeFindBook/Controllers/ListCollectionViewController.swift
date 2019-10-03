@@ -11,18 +11,17 @@ import UIKit
 class ListCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let homeViewController = HomeViewController()
-    var booksData: [Any] = [Any]()
+    var booksData: [BukuInfo] = [BukuInfo]()
     var keyword: String = ""
     
-    var numbers = [1, 2, 3, 4, 5, 6, 7, 8]
-
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Input dari serbang nih: \(keyword)")
         
+        
         homeViewController.delegate = self
-        homeViewController.getBookByKeyword(keyword: keyword)
-
+        homeViewController.getBookByKeyword(keyword: self.keyword)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -47,7 +46,7 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return numbers.count
+        return booksData.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -109,11 +108,12 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
 }
 
 extension ListCollectionViewController: bookProtocol  {
-    func setBookInfo(volumeInfo: [Any]) {
-        booksData = volumeInfo
+    func setBookInfo(bukuInfo: [BukuInfo]) {
+        booksData = bukuInfo
         booksData.forEach { (book) in
-            print("\(book) \n")
+            print("\(book)")
         }
-        print("Total buku: \(booksData.count)")
+        collectionView.reloadData()
+        print("Total buku: \(self.booksData.count)")
     }
 }

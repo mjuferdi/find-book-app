@@ -88,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				086957E62341E005002EE323 /* AppDelegate.swift */,
+				08C63C5A23420D5F00A3600A /* Constant.swift */,
 				08C63C4D2341E76A00A3600A /* API Manager */,
 				082642232344418A00BF80EA /* Protocol */,
 				08C63C502341E78800A3600A /* Models */,
@@ -113,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				08C63C58234209E200A3600A /* APIRouter.swift */,
-				08C63C5A23420D5F00A3600A /* Constant.swift */,
 				08C63C5C2342129A00A3600A /* NetworkManager.swift */,
 			);
 			path = "API Manager";

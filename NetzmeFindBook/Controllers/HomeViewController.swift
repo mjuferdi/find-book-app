@@ -13,7 +13,7 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var keywordTextField: UITextField!
     
-    private var booksInfo: [Any] = []
+    private var booksInfo: [BukuInfo] = [BukuInfo]()
     var keyword: String?
     
     // Delegate Protocol
@@ -30,25 +30,46 @@ class HomeViewController: UIViewController {
             switch result {
             case .success(let book):
                 book.items?.forEach({ (book) in
-                    if let books = book.volumeInfo {
-                        self.booksInfo.append(books)
-                    }
+                    let title = book.volumeInfo?.title ?? DefaultValue.TITLE
+                    let authors = book.volumeInfo?.authors ?? DefaultValue.AUTHOR
+                    let thumbnail = book.volumeInfo?.imageLinks?.thumbnail ?? DefaultValue.THUMBNAIL
+                    let averageRat = book.volumeInfo?.averageRating ?? DefaultValue.AVG_RATING
+                    let ratingsCount = book.volumeInfo?.ratingsCount ?? DefaultValue.RATING
+                    let date = book.volumeInfo?.publishedDate ?? DefaultValue.YEAR
+                    
+                    self.booksInfo.append(BukuInfo(title: title, authors: authors, imageLinks: thumbnail, averageRating: averageRat, ratingsCount: ratingsCount, publishedYear: self.dateOnlyYearFormatter(date: date)))
                 })
-                print("\(self.booksInfo)")
-                self.delegate?.setBookInfo(volumeInfo: self.booksInfo)
+                self.delegate?.setBookInfo(bukuInfo: self.booksInfo)
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
     
-    func dateOnlyYearFormatter(date: String) {
+    // Format published date
+    func dateOnlyYearFormatter(date: String) -> String {
         let inputFormatter = DateFormatter()
-        inputFormatter.dateFormat = "yyy-MM-dd"
-        if let showDate = inputFormatter.date(from: date) {
-            inputFormatter.dateFormat = "yyy"
-            let resultString = inputFormatter.string(from: showDate)
+        let inputFormatterWihtMonth = DateFormatter()
+        var resultString: String = ""
+        
+        inputFormatter.dateFormat = "yyyy-MM-dd"
+        inputFormatterWihtMonth.dateFormat = "yyyy-MM"
+        
+        // Check if date wth different format
+        if inputFormatter.date(from: date) != nil {
+            if let showDate = inputFormatter.date(from: date) {
+                inputFormatter.dateFormat = "yyyy"
+                resultString = inputFormatter.string(from: showDate)
+            }
+        } else if inputFormatterWihtMonth.date(from: date) != nil {
+            if let showDate = inputFormatterWihtMonth.date(from: date) {
+                inputFormatter.dateFormat = "yyyy"
+                resultString = inputFormatter.string(from: showDate)
+            }
+        } else  {
+            resultString = date
         }
+        return resultString
     }
 
     // MARK: - IBAction
@@ -57,10 +78,8 @@ class HomeViewController: UIViewController {
         guard let inputText = keywordTextField.text else {fatalError("Sumting error")}
         if inputText == "" {
             keyword = "{}"
-            print("Keyword: \(keyword)")
         } else {
             keyword = inputText
-            print("Keyword: \(keyword)")
         }
         keywordTextField.text = ""
     }

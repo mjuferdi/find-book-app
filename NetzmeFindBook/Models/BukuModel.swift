@@ -27,7 +27,7 @@ struct Item: Codable {
     let searchInfo: SearchInfo?
 }
 
-// MARK: - VolumeInfo
+//// MARK: - VolumeInfo
 struct VolumeInfo: Codable {
     let title: String?
     let authors: [String]?
@@ -50,7 +50,15 @@ struct VolumeInfo: Codable {
     let panelizationSummary: PanelizationSummary?
     let subtitle: String?
     let averageRating, ratingsCount: Int?
+}
 
+// MARK: - BukuInfo
+struct BukuInfo: Codable {
+    let title: String?
+    let authors: [String]?
+    let imageLinks: String?
+    let averageRating, ratingsCount: Int?
+    let publishedYear: String?
 }
 
 // MARK: - AccessInfo
@@ -107,7 +115,8 @@ struct SearchInfo: Codable {
 
 // MARK: - ImageLinks
 struct ImageLinks: Codable {
-    let smallThumbnail, thumbnail: String?
+    let smallThumbnail: String?
+    let thumbnail: String?
 }
 
 // MARK: - IndustryIdentifier

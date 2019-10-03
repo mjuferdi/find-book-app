@@ -28,3 +28,14 @@ enum HTTPHeaderField: String {
 enum ContentType: String {
     case json = "application/json"
 }
+
+class DefaultValue {
+    static let TITLE = "Untitled"
+    static let AUTHOR = ["Unknown"]
+    static let THUMBNAIL = "No Image"
+    static let AVG_RATING = 0
+    static let RATING = 0
+    static let YEAR = "-"
+}
+
+
