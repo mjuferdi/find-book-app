@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HvS-uG-Zgc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gAO-TM-KVN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="gAO-TM-KVN" customClass="HomeViewController" customModule="NetzmeFindBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FtS-2E-0CJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Netz your self with the book easier. Find your favorite book now!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFP-lp-Sby">
-                                <rect key="frame" x="20" y="40" width="335" height="68"/>
+                                <rect key="frame" x="20" y="60" width="335" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="1Rw-c9-sQw"/>
                                 </constraints>
@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQq-J5-blY">
-                                <rect key="frame" x="129.5" y="210" width="116" height="40"/>
+                                <rect key="frame" x="129.5" y="230" width="116" height="40"/>
                                 <color key="backgroundColor" red="0.24313725489999999" green="0.59215686270000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="5Kj-El-WO4"/>
@@ -49,10 +49,10 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_image" translatesAutoresizingMaskIntoConstraints="NO" id="2tq-cm-zdF">
-                                <rect key="frame" x="22" y="264" width="331" height="279.00000000000091"/>
+                                <rect key="frame" x="22" y="284" width="331" height="323"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mau cari buku apa?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Agp-27-gM4">
-                                <rect key="frame" x="36" y="127" width="303" height="30"/>
+                                <rect key="frame" x="36" y="147" width="303" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NG4-sH-cs5"/>
                                 </constraints>
@@ -92,7 +92,7 @@
             <objects>
                 <collectionViewController id="j2Z-Mq-WAh" customClass="ListCollectionViewController" customModule="NetzmeFindBook" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="KCc-s5-riA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="qky-1S-hYV">
@@ -165,19 +165,31 @@
                                     <outlet property="bookImageView" destination="EPj-Pg-wqT" id="QaA-C4-Fms"/>
                                     <outlet property="rateImageView" destination="SRx-0z-to9" id="jLY-es-fKT"/>
                                     <outlet property="titleLabel" destination="5Om-Ne-SLr" id="Cqd-NN-oNg"/>
+                                    <outlet property="yearLabel" destination="APk-ue-68o" id="Ncv-uV-DxZ"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ListHeaderView" id="1Wp-gF-0up" customClass="ListHeaderView" customModule="NetzmeFindBook" customModuleProvider="target">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ListHeaderView" id="1Wp-gF-0up" customClass="SearchListHeaderView" customModule="NetzmeFindBook" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UOu-IT-Z4M">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="UOu-IT-Z4M">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="j2Z-Mq-WAh" id="KkG-VR-QOC"/>
+                                    </connections>
                                 </searchBar>
                             </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="UOu-IT-Z4M" secondAttribute="trailing" id="7Mu-Gl-2ZN"/>
+                                <constraint firstItem="UOu-IT-Z4M" firstAttribute="leading" secondItem="1Wp-gF-0up" secondAttribute="leading" id="AtL-Fs-xQT"/>
+                                <constraint firstItem="UOu-IT-Z4M" firstAttribute="top" secondItem="1Wp-gF-0up" secondAttribute="top" id="V29-cv-uhj"/>
+                                <constraint firstAttribute="bottom" secondItem="UOu-IT-Z4M" secondAttribute="bottom" id="jpL-9F-AeE"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="searchBar" destination="UOu-IT-Z4M" id="yMu-ay-aVh"/>
+                            </connections>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="j2Z-Mq-WAh" id="6yn-1Z-Mem"/>
@@ -188,32 +200,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pos-0E-wIX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2309.5999999999999" y="150.67466266866569"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="cC0-tJ-4d1">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HvS-uG-Zgc" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="t1y-zR-9Kw">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.23137254900000001" green="0.59215686270000001" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
-                            <color key="textColor" red="0.23137254900000001" green="0.59215686270000001" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.24313725489999999" green="0.59215686270000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="gAO-TM-KVN" kind="relationship" relationship="rootViewController" id="uey-1H-T0C"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8F6-7o-iQ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="528.79999999999995" y="150.67466266866569"/>
         </scene>
     </scenes>
     <resources>

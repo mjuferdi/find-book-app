@@ -15,7 +15,7 @@
 		086957F42341E006002EE323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086957F22341E006002EE323 /* LaunchScreen.storyboard */; };
 		086EFB58234350B000208289 /* ListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086EFB57234350B000208289 /* ListCollectionViewController.swift */; };
 		086EFB5A234350D600208289 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086EFB59234350D600208289 /* ListCell.swift */; };
-		086EFB5C234351D200208289 /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086EFB5B234351D200208289 /* ListHeaderView.swift */; };
+		086EFB5C234351D200208289 /* SearchListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086EFB5B234351D200208289 /* SearchListHeaderView.swift */; };
 		08C63C572341ED4800A3600A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C63C562341ED4800A3600A /* HomeViewController.swift */; };
 		08C63C59234209E200A3600A /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C63C58234209E200A3600A /* APIRouter.swift */; };
 		08C63C5B23420D5F00A3600A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C63C5A23420D5F00A3600A /* Constant.swift */; };
@@ -35,7 +35,7 @@
 		086957F52341E006002EE323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		086EFB57234350B000208289 /* ListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewController.swift; sourceTree = "<group>"; };
 		086EFB59234350D600208289 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
-		086EFB5B234351D200208289 /* ListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeaderView.swift; sourceTree = "<group>"; };
+		086EFB5B234351D200208289 /* SearchListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListHeaderView.swift; sourceTree = "<group>"; };
 		08C63C562341ED4800A3600A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		08C63C58234209E200A3600A /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		08C63C5A23420D5F00A3600A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 			children = (
 				08C63C562341ED4800A3600A /* HomeViewController.swift */,
 				086EFB57234350B000208289 /* ListCollectionViewController.swift */,
-				086EFB5B234351D200208289 /* ListHeaderView.swift */,
+				086EFB5B234351D200208289 /* SearchListHeaderView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -303,7 +303,7 @@
 				086EFB58234350B000208289 /* ListCollectionViewController.swift in Sources */,
 				08C63C5B23420D5F00A3600A /* Constant.swift in Sources */,
 				086EFB5A234350D600208289 /* ListCell.swift in Sources */,
-				086EFB5C234351D200208289 /* ListHeaderView.swift in Sources */,
+				086EFB5C234351D200208289 /* SearchListHeaderView.swift in Sources */,
 				086957EF2341E005002EE323 /* NetzmeFindBook.xcdatamodeld in Sources */,
 				08C63C572341ED4800A3600A /* HomeViewController.swift in Sources */,
 			);

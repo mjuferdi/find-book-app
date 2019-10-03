@@ -18,7 +18,6 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
         super.viewDidLoad()
         print("Input dari serbang nih: \(keyword)")
         
-        
         homeViewController.delegate = self
         homeViewController.getBookByKeyword(keyword: self.keyword)
         
@@ -59,7 +58,7 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ListHeaderView", for: indexPath) as? ListHeaderView
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ListHeaderView", for: indexPath) as? SearchListHeaderView
                 else {
                     fatalError("Invalid view type")
             }
@@ -105,6 +104,25 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
     }
     */
 
+}
+
+extension ListCollectionViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if(!(searchBar.text?.isEmpty)!) {
+            if let searchText = searchBar.text {
+                homeViewController.getBookByKeyword(keyword: searchText)
+                self.collectionView.reloadData()
+            }
+            
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if (searchText.isEmpty) {
+            print("Searchbar empty")
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 extension ListCollectionViewController: bookProtocol  {

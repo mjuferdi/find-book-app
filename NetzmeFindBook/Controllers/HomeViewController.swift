@@ -25,10 +25,13 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // Funktionalität
+    // Fetch query with parameter from user input using http method GET
     func getBookByKeyword(keyword: String) {
         NetworkManager.getBook(keyword: keyword) { (result) in
             switch result {
             case .success(let book):
+                self.booksInfo.removeAll()
                 book.items?.forEach({ (book) in
                     let title = book.volumeInfo?.title ?? DefaultValue.TITLE
                     let authors = book.volumeInfo?.authors ?? DefaultValue.AUTHOR

@@ -13,6 +13,7 @@ class ListCell: UICollectionViewCell {
     @IBOutlet weak var bookImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var rateImageView: UIImageView!
     
     override func awakeFromNib() {
@@ -29,6 +30,7 @@ class ListCell: UICollectionViewCell {
                 bukuAuthor.forEach { (author) in
                     authorLabel.text = author
                 }
+                yearLabel.text = bukuPublished
                 
                 // Download image from URL to set in imageview
                 let urlString = imageLink
