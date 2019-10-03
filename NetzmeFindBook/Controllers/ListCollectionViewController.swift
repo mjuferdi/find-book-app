@@ -51,8 +51,8 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListCell", for: indexPath) as! ListCell
-        cell.titleLabel.text = "Author Buku"
-        cell.authorLabel.text = "Judul Buku"
+        let buku = self.booksData[indexPath.row]
+        cell.buku = buku
         return cell
     }
     
