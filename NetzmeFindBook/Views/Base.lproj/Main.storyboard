@@ -13,7 +13,6 @@
         <!--Home-->
         <scene sceneID="6Qz-ZJ-IXX">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V54-Dm-hWU" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="gAO-TM-KVN" customClass="HomeViewController" customModule="NetzmeFindBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FtS-2E-0CJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
@@ -41,6 +40,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="cariButtonTapped:" destination="gAO-TM-KVN" eventType="touchUpInside" id="fU4-g5-0K0"/>
+                                    <segue destination="j2Z-Mq-WAh" kind="show" id="56x-1M-ooY"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mau cari buku apa?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Agp-27-gM4">
@@ -63,8 +63,108 @@
                         <outlet property="keywordTextField" destination="Agp-27-gM4" id="ILb-aO-XRg"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V54-Dm-hWU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1468" y="150.67466266866569"/>
+        </scene>
+        <!--List Collection View Controller-->
+        <scene sceneID="45A-a3-qIx">
+            <objects>
+                <collectionViewController id="j2Z-Mq-WAh" customClass="ListCollectionViewController" customModule="NetzmeFindBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="KCc-s5-riA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="10" id="qky-1S-hYV">
+                            <size key="itemSize" width="150" height="318"/>
+                            <size key="headerReferenceSize" width="70" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="20" maxX="10" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="ListCell" id="LMq-MB-tMt" customClass="ListCell" customModule="NetzmeFindBook" customModuleProvider="target">
+                                <rect key="frame" x="10" y="70" width="150" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="300"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="buku_image" translatesAutoresizingMaskIntoConstraints="NO" id="EPj-Pg-wqT">
+                                            <rect key="frame" x="5" y="0.0" width="140" height="200"/>
+                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="250" id="v6s-te-Cc3"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="How What to Be" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Om-Ne-SLr">
+                                            <rect key="frame" x="0.0" y="210" width="150" height="23.5"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="By: Mar M J" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipa-zd-EWK">
+                                            <rect key="frame" x="0.0" y="235" width="150" height="23.5"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SRx-0z-to9">
+                                            <rect key="frame" x="0.0" y="270" width="150" height="30"/>
+                                            <color key="backgroundColor" red="0.0" green="0.79607843140000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="eZ3-Tc-7wZ"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5Om-Ne-SLr" secondAttribute="trailing" id="3v3-ty-JzV"/>
+                                    <constraint firstAttribute="trailing" secondItem="SRx-0z-to9" secondAttribute="trailing" id="5zb-eU-Twh"/>
+                                    <constraint firstItem="EPj-Pg-wqT" firstAttribute="leading" secondItem="LMq-MB-tMt" secondAttribute="leading" constant="5" id="8k2-HD-Usi"/>
+                                    <constraint firstItem="Ipa-zd-EWK" firstAttribute="height" secondItem="5Om-Ne-SLr" secondAttribute="height" id="9QO-tA-MWG"/>
+                                    <constraint firstItem="5Om-Ne-SLr" firstAttribute="leading" secondItem="LMq-MB-tMt" secondAttribute="leading" id="Ilx-Zq-nYw"/>
+                                    <constraint firstItem="5Om-Ne-SLr" firstAttribute="top" secondItem="EPj-Pg-wqT" secondAttribute="bottom" constant="10" id="Ls0-lo-BNX"/>
+                                    <constraint firstItem="Ipa-zd-EWK" firstAttribute="leading" secondItem="LMq-MB-tMt" secondAttribute="leading" id="S9b-o6-Dqw"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ipa-zd-EWK" secondAttribute="trailing" id="Unj-kU-8ZG"/>
+                                    <constraint firstItem="SRx-0z-to9" firstAttribute="leading" secondItem="LMq-MB-tMt" secondAttribute="leading" id="Y6i-kh-gS1"/>
+                                    <constraint firstAttribute="trailing" secondItem="EPj-Pg-wqT" secondAttribute="trailing" constant="5" id="cef-5v-fV1"/>
+                                    <constraint firstItem="EPj-Pg-wqT" firstAttribute="top" secondItem="LMq-MB-tMt" secondAttribute="top" id="fPe-Qs-wfM"/>
+                                    <constraint firstAttribute="bottom" secondItem="SRx-0z-to9" secondAttribute="bottom" id="gqu-Px-79w"/>
+                                    <constraint firstItem="Ipa-zd-EWK" firstAttribute="top" secondItem="5Om-Ne-SLr" secondAttribute="bottom" constant="1.5" id="hF8-l0-PLv"/>
+                                </constraints>
+                                <size key="customSize" width="150" height="300"/>
+                                <connections>
+                                    <outlet property="authorLabel" destination="Ipa-zd-EWK" id="PWJ-Hv-dgP"/>
+                                    <outlet property="bookImageView" destination="EPj-Pg-wqT" id="QaA-C4-Fms"/>
+                                    <outlet property="rateImageView" destination="SRx-0z-to9" id="jLY-es-fKT"/>
+                                    <outlet property="titleLabel" destination="5Om-Ne-SLr" id="Cqd-NN-oNg"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ListHeaderView" id="1Wp-gF-0up" customClass="ListHeaderView" customModule="NetzmeFindBook" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="UOu-IT-Z4M">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="UOu-IT-Z4M" firstAttribute="top" secondItem="1Wp-gF-0up" secondAttribute="top" id="WYv-UY-gtw"/>
+                                <constraint firstItem="UOu-IT-Z4M" firstAttribute="leading" secondItem="1Wp-gF-0up" secondAttribute="leading" id="o9K-4h-ink"/>
+                                <constraint firstAttribute="trailing" secondItem="UOu-IT-Z4M" secondAttribute="trailing" id="pfd-g0-fse"/>
+                            </constraints>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="j2Z-Mq-WAh" id="6yn-1Z-Mem"/>
+                            <outlet property="delegate" destination="j2Z-Mq-WAh" id="7m6-8W-KEK"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pos-0E-wIX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2309.5999999999999" y="150.67466266866569"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cC0-tJ-4d1">
@@ -94,6 +194,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="buku_image" width="128" height="199"/>
         <image name="home_image" width="4585" height="3334"/>
     </resources>
 </document>

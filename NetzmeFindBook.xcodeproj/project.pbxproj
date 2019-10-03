@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08264225234441B000BF80EA /* BookProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08264224234441B000BF80EA /* BookProtocol.swift */; };
 		086957E72341E005002EE323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086957E62341E005002EE323 /* AppDelegate.swift */; };
 		086957EC2341E005002EE323 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086957EA2341E005002EE323 /* Main.storyboard */; };
 		086957EF2341E005002EE323 /* NetzmeFindBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 086957ED2341E005002EE323 /* NetzmeFindBook.xcdatamodeld */; };
 		086957F12341E006002EE323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086957F02341E006002EE323 /* Assets.xcassets */; };
 		086957F42341E006002EE323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 086957F22341E006002EE323 /* LaunchScreen.storyboard */; };
+		086EFB58234350B000208289 /* ListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086EFB57234350B000208289 /* ListCollectionViewController.swift */; };
+		086EFB5A234350D600208289 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086EFB59234350D600208289 /* ListCell.swift */; };
+		086EFB5C234351D200208289 /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086EFB5B234351D200208289 /* ListHeaderView.swift */; };
 		08C63C572341ED4800A3600A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C63C562341ED4800A3600A /* HomeViewController.swift */; };
 		08C63C59234209E200A3600A /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C63C58234209E200A3600A /* APIRouter.swift */; };
 		08C63C5B23420D5F00A3600A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C63C5A23420D5F00A3600A /* Constant.swift */; };
@@ -21,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08264224234441B000BF80EA /* BookProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookProtocol.swift; sourceTree = "<group>"; };
 		086957E32341E005002EE323 /* NetzmeFindBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetzmeFindBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		086957E62341E005002EE323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		086957EB2341E005002EE323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,6 +33,9 @@
 		086957F02341E006002EE323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		086957F32341E006002EE323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		086957F52341E006002EE323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		086EFB57234350B000208289 /* ListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewController.swift; sourceTree = "<group>"; };
+		086EFB59234350D600208289 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		086EFB5B234351D200208289 /* ListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeaderView.swift; sourceTree = "<group>"; };
 		08C63C562341ED4800A3600A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		08C63C58234209E200A3600A /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		08C63C5A23420D5F00A3600A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -50,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		082642232344418A00BF80EA /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				08264224234441B000BF80EA /* BookProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		086957DA2341E005002EE323 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +89,7 @@
 			children = (
 				086957E62341E005002EE323 /* AppDelegate.swift */,
 				08C63C4D2341E76A00A3600A /* API Manager */,
+				082642232344418A00BF80EA /* Protocol */,
 				08C63C502341E78800A3600A /* Models */,
 				08C63C4E2341E77300A3600A /* Controllers */,
 				08C63C532341E80D00A3600A /* Cells */,
@@ -106,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				08C63C562341ED4800A3600A /* HomeViewController.swift */,
+				086EFB57234350B000208289 /* ListCollectionViewController.swift */,
+				086EFB5B234351D200208289 /* ListHeaderView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -138,6 +157,7 @@
 		08C63C532341E80D00A3600A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				086EFB59234350D600208289 /* ListCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -276,10 +296,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				08C63C5D2342129A00A3600A /* NetworkManager.swift in Sources */,
+				08264225234441B000BF80EA /* BookProtocol.swift in Sources */,
 				08C63C5F2342138E00A3600A /* BukuModel.swift in Sources */,
 				086957E72341E005002EE323 /* AppDelegate.swift in Sources */,
 				08C63C59234209E200A3600A /* APIRouter.swift in Sources */,
+				086EFB58234350B000208289 /* ListCollectionViewController.swift in Sources */,
 				08C63C5B23420D5F00A3600A /* Constant.swift in Sources */,
+				086EFB5A234350D600208289 /* ListCell.swift in Sources */,
+				086EFB5C234351D200208289 /* ListHeaderView.swift in Sources */,
 				086957EF2341E005002EE323 /* NetzmeFindBook.xcdatamodeld in Sources */,
 				08C63C572341ED4800A3600A /* HomeViewController.swift in Sources */,
 			);

@@ -31,6 +31,9 @@ extension DateFormatter {
     static var bookDateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        return formatter
+        
+        let dateFormatterYear = DateFormatter()
+        dateFormatterYear.dateFormat = "yyyy"
+        return dateFormatterYear
     }
 }
