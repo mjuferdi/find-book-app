@@ -49,7 +49,8 @@ struct VolumeInfo: Codable {
     let canonicalVolumeLink: String?
     let panelizationSummary: PanelizationSummary?
     let subtitle: String?
-    let averageRating, ratingsCount: Int?
+    let averageRating: Double?
+    let ratingsCount: Int?
 }
 
 // MARK: - BukuInfo
@@ -57,8 +58,10 @@ struct BukuInfo: Codable {
     let title: String?
     let authors: [String]?
     let imageLinks: String?
-    let averageRating, ratingsCount: Int?
+    let averageRating: Double?
+    let ratingsCount: Int?
     let publishedYear: String?
+    let language: String?
 }
 
 // MARK: - AccessInfo

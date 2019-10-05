@@ -17,15 +17,17 @@ class HomeViewController: UIViewController {
     var keyword: String?
     
     // Delegate Protocol
-    var delegate: bookProtocol?
-    
+    var delegate: bookProtocol?        
     override func viewDidLoad() {
         super.viewDidLoad()
         keywordTextField.delegate = self
         // Do any additional setup after loading the view.
+        self.hideKeyboardWhenTappedarround()
+
     }
     
     // Funktionalität
+    // Activity Indication
     // Fetch query with parameter from user input using http method GET
     func getBookByKeyword(keyword: String) {
         NetworkManager.getBook(keyword: keyword) { (result) in
@@ -39,8 +41,10 @@ class HomeViewController: UIViewController {
                     let averageRat = book.volumeInfo?.averageRating ?? DefaultValue.AVG_RATING
                     let ratingsCount = book.volumeInfo?.ratingsCount ?? DefaultValue.RATING
                     let date = book.volumeInfo?.publishedDate ?? DefaultValue.YEAR
-                    
-                    self.booksInfo.append(BukuInfo(title: title, authors: authors, imageLinks: thumbnail, averageRating: averageRat, ratingsCount: ratingsCount, publishedYear: self.dateOnlyYearFormatter(date: date)))
+                    let language = book.volumeInfo?.language ?? DefaultValue.LANGUAGE
+                    //let price = book.saleInfo?.listPrice?.amount ?? DefaultValue.PRICE
+                    print("Rating: \(Decimal(averageRat))")
+                    self.booksInfo.append(BukuInfo(title: title, authors: authors, imageLinks: thumbnail, averageRating: averageRat, ratingsCount: ratingsCount, publishedYear: self.dateOnlyYearFormatter(date: date), language: language))
                 })
                 self.delegate?.setBookInfo(bukuInfo: self.booksInfo)
             case .failure(let error):
@@ -109,3 +113,15 @@ extension HomeViewController: UITextFieldDelegate {
     }
 }
 
+// Hide keyboard when touched anywhere
+extension UIViewController {
+    func hideKeyboardWhenTappedarround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}

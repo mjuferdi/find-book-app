@@ -9,4 +9,5 @@ target 'NetzmeFindBook' do
   pod 'Alamofire', '~> 5.0.0-rc.2'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'Kingfisher'
+  pod 'Cosmos', '~> 20.0'
 end

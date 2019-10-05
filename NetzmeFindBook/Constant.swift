@@ -29,13 +29,20 @@ enum ContentType: String {
     case json = "application/json"
 }
 
+enum Bahasa: String {
+    case english = "en"
+    case bahasa = "id"
+}
+
 class DefaultValue {
     static let TITLE = "Untitled"
     static let AUTHOR = ["Unknown"]
     static let THUMBNAIL = "No Image"
-    static let AVG_RATING = 0
+    static let AVG_RATING = 0.0
     static let RATING = 0
     static let YEAR = "-"
+    static let LANGUAGE = "-"
+    static let PRICE = 0
 }
 
 

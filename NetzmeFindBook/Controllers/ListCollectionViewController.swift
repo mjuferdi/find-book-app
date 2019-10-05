@@ -14,12 +14,18 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
     var booksData: [BukuInfo] = [BukuInfo]()
     var keyword: String = ""
     
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Input dari serbang nih: \(keyword)")
         
+        activityIndicatorSetup()
+        activityIndicator.startAnimating()
+        
         homeViewController.delegate = self
         homeViewController.getBookByKeyword(keyword: self.keyword)
+    
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,7 +35,20 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
     }
     
     // MARK: - Functionalität
-
+    func activityIndicatorSetup() {
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = UIActivityIndicatorView.Style.gray
+        let transfrom = CGAffineTransform.init(scaleX: 2.5, y: 2.5)
+        activityIndicator.transform = transfrom
+        self.view.addSubview(activityIndicator)
+    }
+    
+    func bookNotFoundNotification() {
+        let alert = UIAlertController(title: "Uuupss..", message: "Buku yang kamu cari gak ada :(", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+    }
     
     /*
     // MARK: - Navigation
@@ -62,6 +81,7 @@ class ListCollectionViewController: UICollectionViewController, UICollectionView
                 else {
                     fatalError("Invalid view type")
             }
+            headerView.searchBar.placeholder = "Mau cari buku apa?"
             return headerView
         default:
             assert(false, "Invalid element type")
@@ -110,6 +130,7 @@ extension ListCollectionViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if(!(searchBar.text?.isEmpty)!) {
             if let searchText = searchBar.text {
+                activityIndicator.startAnimating()
                 homeViewController.getBookByKeyword(keyword: searchText)
                 self.collectionView.reloadData()
             }
@@ -126,11 +147,17 @@ extension ListCollectionViewController: UISearchBarDelegate {
 }
 
 extension ListCollectionViewController: bookProtocol  {
+
     func setBookInfo(bukuInfo: [BukuInfo]) {
-        booksData = bukuInfo
+        if bukuInfo.count == 0 {
+            bookNotFoundNotification()
+        } else {
+            booksData = bukuInfo
+        }
         booksData.forEach { (book) in
             print("\(book)")
         }
+        activityIndicator.stopAnimating()
         collectionView.reloadData()
         print("Total buku: \(self.booksData.count)")
     }
