@@ -195,14 +195,13 @@
                                 <constraints>
                                     <constraint firstItem="EPj-Pg-wqT" firstAttribute="leading" secondItem="LMq-MB-tMt" secondAttribute="leading" constant="5" id="8k2-HD-Usi"/>
                                     <constraint firstItem="IG7-9l-9tQ" firstAttribute="leading" secondItem="LMq-MB-tMt" secondAttribute="leading" id="8yW-t9-421"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="PXL-yS-4h0" secondAttribute="trailing" constant="10" id="F7W-OY-K8D"/>
                                     <constraint firstItem="PXL-yS-4h0" firstAttribute="top" secondItem="IG7-9l-9tQ" secondAttribute="bottom" constant="5" id="Flz-UX-7tf"/>
                                     <constraint firstAttribute="trailing" secondItem="IG7-9l-9tQ" secondAttribute="trailing" id="McZ-DB-buK"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="PXL-yS-4h0" secondAttribute="bottom" constant="2" id="PSf-12-0zi"/>
-                                    <constraint firstItem="PXL-yS-4h0" firstAttribute="leading" secondItem="LMq-MB-tMt" secondAttribute="leadingMargin" constant="10" id="aBX-s1-bSp"/>
                                     <constraint firstItem="IG7-9l-9tQ" firstAttribute="top" secondItem="EPj-Pg-wqT" secondAttribute="bottom" constant="10" id="bsV-0f-UJn"/>
                                     <constraint firstAttribute="trailing" secondItem="EPj-Pg-wqT" secondAttribute="trailing" constant="5" id="cef-5v-fV1"/>
                                     <constraint firstItem="EPj-Pg-wqT" firstAttribute="top" secondItem="LMq-MB-tMt" secondAttribute="top" id="fPe-Qs-wfM"/>
+                                    <constraint firstItem="PXL-yS-4h0" firstAttribute="centerX" secondItem="LMq-MB-tMt" secondAttribute="centerX" id="ma7-A3-BAk"/>
                                 </constraints>
                                 <size key="customSize" width="150" height="350"/>
                                 <connections>

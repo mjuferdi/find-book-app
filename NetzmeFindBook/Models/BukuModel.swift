@@ -8,7 +8,7 @@
 
 import Foundation
 
-//// MARK: - BukuModel
+// MARK: - BukuModel
 struct BukuModel: Codable {
     let kind: String?
     let totalItems: Int?
@@ -27,7 +27,7 @@ struct Item: Codable {
     let searchInfo: SearchInfo?
 }
 
-//// MARK: - VolumeInfo
+// MARK: - VolumeInfo
 struct VolumeInfo: Codable {
     let title: String?
     let authors: [String]?
@@ -130,11 +130,13 @@ struct IndustryIdentifier: Codable {
 
 // MARK: - PanelizationSummary
 struct PanelizationSummary: Codable {
-    let containsEpubBubbles, containsImageBubbles: Bool?
+    let containsEpubBubbles: Bool?
+    let containsImageBubbles: Bool?
 }
 
 
 // MARK: - ReadingModes
 struct ReadingModes: Codable {
-    let text, image: Bool?
+    let text: Bool?
+    let image: Bool?
 }

@@ -21,6 +21,7 @@
 		08C63C5B23420D5F00A3600A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C63C5A23420D5F00A3600A /* Constant.swift */; };
 		08C63C5D2342129A00A3600A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C63C5C2342129A00A3600A /* NetworkManager.swift */; };
 		08C63C5F2342138E00A3600A /* BukuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C63C5E2342138E00A3600A /* BukuModel.swift */; };
+		08F97166234A02EE00951A69 /* icon-app.png in Resources */ = {isa = PBXBuildFile; fileRef = 08F97165234A02ED00951A69 /* icon-app.png */; };
 		E412DF0E041241305BA1BA79 /* Pods_NetzmeFindBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F221CDEEE6C0E08685EA2E97 /* Pods_NetzmeFindBook.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		08C63C5A23420D5F00A3600A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		08C63C5C2342129A00A3600A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		08C63C5E2342138E00A3600A /* BukuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BukuModel.swift; sourceTree = "<group>"; };
+		08F97165234A02ED00951A69 /* icon-app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-app.png"; path = "../../../icon-app.png"; sourceTree = "<group>"; };
 		9FDA41279FAC96F1C4FD512E /* Pods-NetzmeFindBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetzmeFindBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NetzmeFindBook/Pods-NetzmeFindBook.debug.xcconfig"; sourceTree = "<group>"; };
 		AAD92F555E2B992C56EB37C5 /* Pods-NetzmeFindBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetzmeFindBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-NetzmeFindBook/Pods-NetzmeFindBook.release.xcconfig"; sourceTree = "<group>"; };
 		F221CDEEE6C0E08685EA2E97 /* Pods_NetzmeFindBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NetzmeFindBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +108,7 @@
 			children = (
 				086957F02341E006002EE323 /* Assets.xcassets */,
 				086957F52341E006002EE323 /* Info.plist */,
+				08F97165234A02ED00951A69 /* icon-app.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			files = (
 				086957F42341E006002EE323 /* LaunchScreen.storyboard in Resources */,
 				086957F12341E006002EE323 /* Assets.xcassets in Resources */,
+				08F97166234A02EE00951A69 /* icon-app.png in Resources */,
 				086957EC2341E005002EE323 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

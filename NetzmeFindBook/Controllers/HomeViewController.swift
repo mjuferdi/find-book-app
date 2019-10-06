@@ -26,8 +26,7 @@ class HomeViewController: UIViewController {
 
     }
     
-    // Funktionalität
-    // Activity Indication
+    // MARK: - Funktionalität
     // Fetch query with parameter from user input using http method GET
     func getBookByKeyword(keyword: String) {
         NetworkManager.getBook(keyword: keyword) { (result) in
@@ -42,8 +41,6 @@ class HomeViewController: UIViewController {
                     let ratingsCount = book.volumeInfo?.ratingsCount ?? DefaultValue.RATING
                     let date = book.volumeInfo?.publishedDate ?? DefaultValue.YEAR
                     let language = book.volumeInfo?.language ?? DefaultValue.LANGUAGE
-                    //let price = book.saleInfo?.listPrice?.amount ?? DefaultValue.PRICE
-                    print("Rating: \(Decimal(averageRat))")
                     self.booksInfo.append(BukuInfo(title: title, authors: authors, imageLinks: thumbnail, averageRating: averageRat, ratingsCount: ratingsCount, publishedYear: self.dateOnlyYearFormatter(date: date), language: language))
                 })
                 self.delegate?.setBookInfo(bukuInfo: self.booksInfo)

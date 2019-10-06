@@ -12,7 +12,6 @@ import SwiftyJSON
 
 
 class NetworkManager {
-    
     @discardableResult
     private static func performRequest<T:Decodable>(route:APIRouter, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (Result<T, AFError>)->Void) -> DataRequest {
         return AF.request(route).responseDecodable (decoder: decoder){ (response: DataResponse<T, AFError>) in
@@ -21,19 +20,6 @@ class NetworkManager {
     }
     
     static func getBook(keyword: String, completion:@escaping (Result<BukuModel, AFError>) -> Void) {
-        let jsonDecoder = JSONDecoder()
-        jsonDecoder.dateDecodingStrategy = .formatted(.bookDateFormatter)
-        performRequest(route: APIRouter.cariBuku(keyword: ["q": keyword]), decoder: jsonDecoder, completion: completion)
-    }
-}
-
-extension DateFormatter {
-    static var bookDateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        
-        let dateFormatterYear = DateFormatter()
-        dateFormatterYear.dateFormat = "yyyy"
-        return dateFormatterYear
+        performRequest(route: APIRouter.cariBuku(keyword: ["q": keyword]), completion: completion)
     }
 }

@@ -36,7 +36,6 @@ enum APIRouter: URLRequestConvertible {
         }
     }
 
-    
     func asURLRequest() throws -> URLRequest {
         let url = try K.ProductionServer.baseuRL.asURL()
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
@@ -52,7 +51,6 @@ enum APIRouter: URLRequestConvertible {
         urlRequest.httpMethod = method.rawValue
         print("url: \(urlRequest)")
         return urlRequest
-
     }
 }
 

@@ -56,7 +56,6 @@ class ListCell: UICollectionViewCell {
                 cosmosView.rating = Double(bukuAverageRat)
                 cosmosView.settings.fillMode = .half
                 cosmosView.settings.updateOnTouch = false
-                
             }
         }
     }
